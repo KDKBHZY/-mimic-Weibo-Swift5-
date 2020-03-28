@@ -23,7 +23,12 @@ extension wbMainViewController{
     private func setupChildcontrollers(){
         
         let array = [
-            ["clsname":"wbhomeViewController","title" : "首页","imagename":"tabbar_home"],
+            ["clsname":"wbhomeViewController","title" : "首页","imagename":"home"],
+            ["clsname":"wbmessageViewController","title" : "消息","imagename":"message_center"],
+
+            ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover"],
+            ["clsname":"wbprofileViewController","title" : "我","imagename":"profile"],
+
         ]
         var arraym = [UIViewController]()
         for dict in array {
@@ -43,6 +48,8 @@ viewControllers = arraym
         }
         let vc = cls.init()
         vc.title = title
+        vc.tabBarItem.image = UIImage(named: "tabbar_" + imagename)
+        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imagename+"_selected")?.withRenderingMode(.alwaysOriginal)
         let nav = wbnavigationController(rootViewController: vc)
         return nav
         
