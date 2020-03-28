@@ -12,18 +12,17 @@ class wbbaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupui()
+        // Do any additional setup after loadin@objc @objc @objc @objc @objc g the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
+   
 }
+ //设置界面
+extension wbbaseViewController{
+    @objc func setupui(){
+        view.backgroundColor = UIColor.cz_random()
+        //设置导航栏
+       
+    }
+   }

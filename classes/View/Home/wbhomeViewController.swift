@@ -13,18 +13,20 @@ class wbhomeViewController: wbbaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc private func showfriends(){
+           print(#function)
+           let vc = WBdemoViewController()
+           vc.hidesBottomBarWhenPushed = true
+           navigationController?.pushViewController(vc, animated: true)
+           
+       }
+}
+//设置界面
+extension wbhomeViewController{
+    override func setupui() {
+        super.setupui()
+         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style :.plain, target:self, action:#selector(showfriends) )
     }
-    */
-
+ 
 }
