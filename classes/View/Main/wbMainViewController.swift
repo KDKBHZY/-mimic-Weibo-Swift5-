@@ -13,19 +13,38 @@ class wbMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
               setupChildcontrollers()
+        setupComposeButton()
         // Do any additional setup after loading the view.
     }
-
+    private lazy var composeButton: UIButton = UIButton.cz_imageButton(
+          "tabbar_compose_icon_add",
+          backgroundImageName: "tabbar_compose_button")
 
 }
 extension wbMainViewController{
-
+    /// 设置撰写按钮
+       private func setupComposeButton() {
+           tabBar.addSubview(composeButton)
+           
+           // 计算按钮的宽度
+        let count = CGFloat(children.count)
+           // 将向内缩进的宽度
+           let w = tabBar.bounds.width / count
+           
+           // CGRectInset 正数向内缩进，负数向外扩展
+           composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
+           print("撰写按钮宽度 \(composeButton.bounds.width)")
+           
+           // 按钮监听方法
+           //composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+       }
+       
     private func setupChildcontrollers(){
         
         let array = [
             ["clsname":"wbhomeViewController","title" : "首页","imagename":"home"],
             ["clsname":"wbmessageViewController","title" : "消息","imagename":"message_center"],
-
+            ["clsname":"UIViewController"],
             ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover"],
             ["clsname":"wbprofileViewController","title" : "我","imagename":"profile"],
 
