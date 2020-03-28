@@ -80,7 +80,7 @@ viewControllers = arraym
         vc.tabBarItem.setTitleTextAttributes(
             [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)],
                   for: UIControl.State(rawValue: 0))
-              
+              //实例化控制器的时候，会调用push
         let nav = wbnavigationController(rootViewController: vc)
         return nav
         
