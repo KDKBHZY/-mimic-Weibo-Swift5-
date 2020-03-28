@@ -30,6 +30,7 @@
 		060424C3242E0E0F002B34F4 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 060424B6242E0E0F002B34F4 /* NSAttributedString+CZAdditon.m */; };
 		060424C4242E0E0F002B34F4 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 060424B7242E0E0F002B34F4 /* NSArray+Log.m */; };
 		068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */; };
+		068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */; };
 		06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		060424B8242E0E0F002B34F4 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		060424C5242E0E59002B34F4 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Weibo-Bridge.h"; path = "../classes/Weibo-Bridge.h"; sourceTree = "<group>"; };
 		068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBdemoViewController.swift; sourceTree = "<group>"; };
+		068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */,
+				068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0604249D242DFD04002B34F4 /* wbbaseViewController.swift in Sources */,
+				068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */,
 				060424BD242E0E0F002B34F4 /* NSString+CZBase64.m in Sources */,
 				0604249E242DFD04002B34F4 /* wbnavigationController.swift in Sources */,
 				060424C0242E0E0F002B34F4 /* NSObject+CZRuntime.m in Sources */,

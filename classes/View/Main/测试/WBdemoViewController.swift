@@ -25,6 +25,6 @@ extension WBdemoViewController{
     override func setupui() {
 //        设置右侧控制器
         super .setupui()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title:"下一个", style: .plain, target: self, action: #selector(shownext))
+       navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(shownext))
     }
 }

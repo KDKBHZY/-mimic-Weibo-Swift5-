@@ -26,7 +26,8 @@ class wbhomeViewController: wbbaseViewController {
 extension wbhomeViewController{
     override func setupui() {
         super.setupui()
-         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style :.plain, target:self, action:#selector(showfriends) )
+      
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showfriends))
     }
  
 }
