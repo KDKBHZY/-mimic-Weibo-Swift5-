@@ -50,6 +50,15 @@ viewControllers = arraym
         vc.title = title
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imagename)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imagename+"_selected")?.withRenderingMode(.alwaysOriginal)
+        
+        //设置字体
+        vc.tabBarItem.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.orange],
+                   for: .highlighted);
+        vc.tabBarItem.setTitleTextAttributes(
+            [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)],
+                  for: UIControl.State(rawValue: 0))
+              
         let nav = wbnavigationController(rootViewController: vc)
         return nav
         
