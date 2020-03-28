@@ -19,7 +19,10 @@ class wbMainViewController: UITabBarController {
     private lazy var composeButton: UIButton = UIButton.cz_imageButton(
           "tabbar_compose_icon_add",
           backgroundImageName: "tabbar_compose_button")
-
+//按钮监听方法
+    @objc private func composeStatus() {
+        print("撰写微博")
+    }
 }
 extension wbMainViewController{
     /// 设置撰写按钮
@@ -29,14 +32,14 @@ extension wbMainViewController{
            // 计算按钮的宽度
         let count = CGFloat(children.count)
            // 将向内缩进的宽度
-           let w = tabBar.bounds.width / count
+           let w = tabBar.bounds.width / count-1
            
            // CGRectInset 正数向内缩进，负数向外扩展
            composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
            print("撰写按钮宽度 \(composeButton.bounds.width)")
            
            // 按钮监听方法
-           //composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+           composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
        }
        
     private func setupChildcontrollers(){
