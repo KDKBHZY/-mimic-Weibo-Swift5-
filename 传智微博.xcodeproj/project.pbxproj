@@ -199,10 +199,9 @@
 		06042494242DFD04002B34F4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				068C50C6242F5B7D00DAC554 /* 测试 */,
-				06042495242DFD04002B34F4 /* wbMainViewController.swift */,
 				06042496242DFD04002B34F4 /* wbbaseViewController.swift */,
-				06042497242DFD04002B34F4 /* wbnavigationController.swift */,
+				068C50C6242F5B7D00DAC554 /* 测试 */,
+				06DFF6DE243098F300813EC6 /* 主控制器 */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -245,6 +244,15 @@
 				068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */,
 			);
 			path = "测试";
+			sourceTree = "<group>";
+		};
+		06DFF6DE243098F300813EC6 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				06042497242DFD04002B34F4 /* wbnavigationController.swift */,
+				06042495242DFD04002B34F4 /* wbMainViewController.swift */,
+			);
+			path = "主控制器";
 			sourceTree = "<group>";
 		};
 		06EA0F5D242E190A0057CAE2 /* Extensions */ = {
