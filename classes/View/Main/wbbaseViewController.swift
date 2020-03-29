@@ -35,7 +35,7 @@ loaddata()
       }
     //具体实现由子类实现
     func loaddata(){
-        
+       
     }
 }
  //设置界面
@@ -82,8 +82,8 @@ extension wbbaseViewController:UITableViewDelegate,UITableViewDataSource{
          return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return 10
-       }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//           return 10
+//       }
     
 }
