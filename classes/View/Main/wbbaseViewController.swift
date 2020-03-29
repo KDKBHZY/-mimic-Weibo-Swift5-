@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+//oc不能多继承，使用协议替代
 class wbbaseViewController: UIViewController {
+   
+    
     //表格视图
     var tableview:UITableView?
     
@@ -23,7 +25,7 @@ class wbbaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupui()
-        // Do any additional setup after loadin@objc @objc @objc @objc @objc g the view.
+loaddata()
     }
    
    override var title: String?{
@@ -31,6 +33,10 @@ class wbbaseViewController: UIViewController {
               navitem.title = title
           }
       }
+    //具体实现由子类实现
+    func loaddata(){
+        
+    }
 }
  //设置界面
 extension wbbaseViewController{
@@ -39,6 +45,7 @@ extension wbbaseViewController{
         setuptableview()
 
       setupnavigationbar()
+        
     }
 //    设置导航条
     private func setupnavigationbar(){
@@ -57,7 +64,26 @@ extension wbbaseViewController{
     //设置表格视图
     private func setuptableview(){
         tableview = UITableView(frame: view.bounds, style: .plain)
-              
+              //设置数据源代理，
+        tableview?.dataSource = self
+        tableview?.delegate = self
         view.insertSubview(tableview!, belowSubview: navigationbar)
     }
    }
+extension wbbaseViewController:UITableViewDelegate,UITableViewDataSource{
+    
+          // 基类只是准备方法，子类负责具体的实现
+          // 子类的数据源方法不需要 super
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return 10
+       }
+    
+}
