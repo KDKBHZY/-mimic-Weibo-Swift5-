@@ -46,7 +46,7 @@ extension wbMainViewController{
         
         let array = [
             ["clsname":"wbhomeViewController","title" : "首页","imagename":"home"],
-            ["clsname":"wbmessageViewController","title" : "消息","imagename":"message_center"],
+            ["clsname":"wbmessageViewController","title":"消息","imagename":"message_center"],
             ["clsname":"UIViewController"],
             ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover"],
             ["clsname":"wbprofileViewController","title" : "我","imagename":"profile"],
