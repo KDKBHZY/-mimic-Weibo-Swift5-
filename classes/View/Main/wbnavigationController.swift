@@ -25,12 +25,12 @@ class wbnavigationController: UINavigationController {
                        //判断控制器级数
                 if children.count == 1{
                     print("finish")
-  vc.navitem.leftBarButtonItem = UIBarButtonItem(title: "首页", target: self,action: #selector(back))                }
+  vc.navitem.leftBarButtonItem = UIBarButtonItem(title: "首页", target: self,action: #selector(back),isBack:true)                }
                        
                        
                        //取出navitem
                else
-                {vc.navitem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self,action: #selector(back))}
+                {vc.navitem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self,action: #selector(back),isBack:true)}
         }
        
        
