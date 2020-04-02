@@ -17,8 +17,16 @@ private lazy var statuslist = [String]()
 
     }
     override func loaddata() {
-        for  i in 0..<10{
-            statuslist.insert(i.description, at: 0)
+        //模拟延迟加载数据
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+        for  i in 0..<15{
+            self.statuslist.insert(i.description, at: 0)
+        }
+        print("刷新表格")
+            //结束刷新控件
+            self.refreshControl?.endRefreshing()
+        //刷新表格
+            self.tableview?.reloadData()
         }
     }
     @objc private func showfriends(){
