@@ -8,12 +8,13 @@
 
 import UIKit
 //oc不能多继承，使用协议替代
+
 class wbbaseViewController: UIViewController {
    
     
     //表格视图
     var tableview:UITableView?
-    
+    var refreshControl:UIRefreshControl?
      lazy var navigationbar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 74))
     //自定义导航条目
 
@@ -34,7 +35,7 @@ loaddata()
           }
       }
     //具体实现由子类实现
-    func loaddata(){
+    @objc func loaddata(){
        
     }
 }
@@ -42,15 +43,19 @@ loaddata()
 extension wbbaseViewController{
     @objc func setupui(){
         view.backgroundColor = UIColor.cz_random()
+        //取消自动缩进
+        automaticallyAdjustsScrollViewInsets = false
         setuptableview()
 
       setupnavigationbar()
+        
         
     }
 //    设置导航条
     private func setupnavigationbar(){
           //设置导航栏
                 view.addSubview(navigationbar)
+
         //        将item给bar
                 navigationbar.items = [navitem]
                 //设置navbar color
@@ -68,6 +73,13 @@ extension wbbaseViewController{
         tableview?.dataSource = self
         tableview?.delegate = self
         view.insertSubview(tableview!, belowSubview: navigationbar)
+        //设置内容锁紧
+        tableview?.contentInset = UIEdgeInsets(top: navigationbar.bounds.height, left: 0, bottom: 0, right: 0)
+        //设置刷新控件
+        refreshControl = UIRefreshControl()
+        //添加到表格视图
+        tableview?.addSubview(refreshControl!)
+        refreshControl?.addTarget(self, action: #selector(loaddata), for: .valueChanged)
     }
    }
 extension wbbaseViewController:UITableViewDelegate,UITableViewDataSource{
