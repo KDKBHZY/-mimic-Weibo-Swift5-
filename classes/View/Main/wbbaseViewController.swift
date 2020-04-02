@@ -10,8 +10,8 @@ import UIKit
 //oc不能多继承，使用协议替代
 
 class wbbaseViewController: UIViewController {
-   
-    
+   //用户登录
+    var usertlogon = true
     //表格视图
     var tableview:UITableView?
     var refreshControl:UIRefreshControl?
@@ -38,20 +38,28 @@ loaddata()
       }
     //具体实现由子类实现
     @objc func loaddata(){
-       
+        //如果子类不实现，默认关闭
+        refreshControl?.endRefreshing()
     }
 }
  //设置界面
 extension wbbaseViewController{
     @objc func setupui(){
-        view.backgroundColor = UIColor.cz_random()
+        view.backgroundColor = UIColor.white
         //取消自动缩进
         automaticallyAdjustsScrollViewInsets = false
-        setuptableview()
+         setupnavigationbar()
+        usertlogon ? setuptableview():setupVisitview()
 
-      setupnavigationbar()
+     
         
         
+    }
+    //访客视图
+    private func setupVisitview(){
+        let visitview = UIView(frame: view.bounds)
+        visitview.backgroundColor = UIColor.cz_random()
+       view.insertSubview(visitview, belowSubview: navigationbar)
     }
 //    设置导航条
     private func setupnavigationbar(){
