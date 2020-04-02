@@ -15,6 +15,8 @@ class wbbaseViewController: UIViewController {
     //表格视图
     var tableview:UITableView?
     var refreshControl:UIRefreshControl?
+    //下拉刷新标记
+    var isPullup = false
      lazy var navigationbar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 74))
     //自定义导航条目
 
@@ -93,7 +95,20 @@ extension wbbaseViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          return UITableViewCell()
     }
-    
+    //在显示最后一行刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //判定index是不是最后一行
+        let row = indexPath.row
+        let section  = tableView.numberOfSections - 1
+        let count = tableView.numberOfRows(inSection: section)
+        if (row == count-1) && !isPullup {
+            print("沙拉刷新")
+            isPullup = true
+            loaddata()
+        }
+        print("section")
+        
+    }
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //           return 10
 //       }

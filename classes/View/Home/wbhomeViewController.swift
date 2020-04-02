@@ -19,12 +19,19 @@ private lazy var statuslist = [String]()
     override func loaddata() {
         //模拟延迟加载数据
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
+            
+            
         for  i in 0..<15{
+            if(self.isPullup == true){
+                self.statuslist.append("上拉\(i)")
+            }else{
             self.statuslist.insert(i.description, at: 0)
+            }
         }
-        print("刷新表格")
+        print("加载刷新结束")
             //结束刷新控件
             self.refreshControl?.endRefreshing()
+            self.isPullup = false
         //刷新表格
             self.tableview?.reloadData()
         }
