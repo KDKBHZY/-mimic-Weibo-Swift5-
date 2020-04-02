@@ -31,6 +31,7 @@
 		060424C4242E0E0F002B34F4 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 060424B7242E0E0F002B34F4 /* NSArray+Log.m */; };
 		068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */; };
 		068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */; };
+		06A6C1762436039900A383E3 /* WBvisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A6C1752436039900A383E3 /* WBvisitorView.swift */; };
 		06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		060424C5242E0E59002B34F4 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Weibo-Bridge.h"; path = "../classes/Weibo-Bridge.h"; sourceTree = "<group>"; };
 		068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBdemoViewController.swift; sourceTree = "<group>"; };
 		068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		06A6C1752436039900A383E3 /* WBvisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBvisitorView.swift; sourceTree = "<group>"; };
 		06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 		06042494242DFD04002B34F4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				06A6C1742436034B00A383E3 /* 访客 */,
 				06042496242DFD04002B34F4 /* wbbaseViewController.swift */,
 				068C50C6242F5B7D00DAC554 /* 测试 */,
 				06DFF6DE243098F300813EC6 /* 主控制器 */,
@@ -244,6 +247,14 @@
 				068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */,
 			);
 			path = "测试";
+			sourceTree = "<group>";
+		};
+		06A6C1742436034B00A383E3 /* 访客 */ = {
+			isa = PBXGroup;
+			children = (
+				06A6C1752436039900A383E3 /* WBvisitorView.swift */,
+			);
+			path = "访客";
 			sourceTree = "<group>";
 		};
 		06DFF6DE243098F300813EC6 /* 主控制器 */ = {
@@ -345,6 +356,7 @@
 				06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */,
 				060424BB242E0E0F002B34F4 /* UIScreen+CZAddition.m in Sources */,
 				06042499242DFD04002B34F4 /* wbdiscoverViewController.swift in Sources */,
+				06A6C1762436039900A383E3 /* WBvisitorView.swift in Sources */,
 				0604249B242DFD04002B34F4 /* wbprofileViewController.swift in Sources */,
 				06042498242DFD04002B34F4 /* wbhomeViewController.swift in Sources */,
 				060424BF242E0E0F002B34F4 /* UIButton+CZAddition.m in Sources */,

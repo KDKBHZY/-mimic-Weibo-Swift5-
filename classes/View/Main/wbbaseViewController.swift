@@ -11,7 +11,7 @@ import UIKit
 
 class wbbaseViewController: UIViewController {
    //用户登录
-    var usertlogon = true
+    var usertlogon = false
     //表格视图
     var tableview:UITableView?
     var refreshControl:UIRefreshControl?
@@ -57,8 +57,7 @@ extension wbbaseViewController{
     }
     //访客视图
     private func setupVisitview(){
-        let visitview = UIView(frame: view.bounds)
-        visitview.backgroundColor = UIColor.cz_random()
+        let visitview = WBvisitorView(frame: view.bounds)
        view.insertSubview(visitview, belowSubview: navigationbar)
     }
 //    设置导航条
