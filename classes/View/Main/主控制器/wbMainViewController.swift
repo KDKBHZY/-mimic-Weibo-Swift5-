@@ -56,17 +56,25 @@ extension wbMainViewController{
         
         let array = [
             ["clsname":"wbhomeViewController","title" : "首页","imagename":"home",
-                "visitorinfo":["imagename":"","message":"哈哈"]
+                "visitorInfo":["imagename":"","message":"关注一些人，康康有什么"]
             ],
-            ["clsname":"wbmessageViewController","title":"消息","imagename":"message_center"],
+            
+            ["clsname":"wbmessageViewController","title":"消息","imagename":"message_center",
+            "visitorInfo":["imagename":"visitordiscover_image_message","message":"登录后，会收到信息"]],
+            
             ["clsname":"UIViewController"],
-            ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover"],
-            ["clsname":"wbprofileViewController","title" : "我","imagename":"profile"],
+            
+            ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover",
+            "visitorInfo":["imagename":"","message":"登录后，最新的消息"]],
+            
+            ["clsname":"wbprofileViewController","title" : "我","imagename":"profile",
+            "visitorInfo":["imagename":"visitordiscover_image_profile","message":"登录后，你的个人资料"]],
 
         ]
+        (array as NSArray).write(toFile: "/Users/zyh/Desktop/Weibo/demo.plist" , atomically: true)
         var arraym = [UIViewController]()
         for dict in array {
-            arraym.append(controller(dict: dict as! [String : AnyObject]))
+            arraym.append(controller(dict: dict as [String : AnyObject]))
         }
 viewControllers = arraym
         
@@ -75,12 +83,15 @@ viewControllers = arraym
         guard let clsname = dict["clsname"]as? String,
             let title = dict["title"]as? String,
             let imagename = dict["imagename"]as? String,
-            let cls = NSClassFromString(Bundle.main.namespace + "." + clsname) as? UIViewController.Type
-        else{
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsname) as? wbbaseViewController.Type,
+            let visitordict = dict["visitorInfo"] as? [String:String]
+            else {
                 return UIViewController()
                 
         }
         let vc = cls.init()
+        //设置访客信息
+        vc.visitInfodict = visitordict
         vc.title = title as?String
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imagename as! String)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imagename  as! String+"_selected")?.withRenderingMode(.alwaysOriginal)
