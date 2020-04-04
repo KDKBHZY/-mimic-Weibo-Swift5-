@@ -10,6 +10,7 @@ import UIKit
 //oc不能多继承，使用协议替代
 
 class wbbaseViewController: UIViewController {
+    var visitInfodict:[String:String]?
    //用户登录
     var usertlogon = false
     //表格视图
@@ -59,6 +60,7 @@ extension wbbaseViewController{
     private func setupVisitview(){
         let visitview = WBvisitorView(frame: view.bounds)
        view.insertSubview(visitview, belowSubview: navigationbar)
+        visitview.visitorInfo = visitInfodict
     }
 //    设置导航条
     private func setupnavigationbar(){

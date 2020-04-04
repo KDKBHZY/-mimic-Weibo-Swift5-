@@ -9,7 +9,25 @@
 import UIKit
 //访客视图
 class WBvisitorView: UIView {
+    //设置访客视图信息
 
+    var visitorInfo:[String:String]?{
+        didSet{
+            guard let imgname = visitorInfo?["imagename"],
+                let message = visitorInfo?["message"]
+                   else{
+                       return
+                   }
+                   //设置消息
+                   tiplabel.text = message
+                   //设置图像
+                   if imgname == ""{
+                       return
+                   }
+                   iconview.image = UIImage(named: imgname)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupui()
@@ -18,6 +36,12 @@ class WBvisitorView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+   
+   
+    
+    
+    
+    
     private lazy var iconview = UIImageView(image: UIImage(named:"visitordiscover_feed_image_smallicon"))
     private lazy var houseview = UIImageView(image: UIImage(named:"visitordiscover_feed_image_house"))
     private lazy var tiplabel:UILabel = UILabel.cz_label(withText: "关注一些人-------看看有什么惊喜", fontSize: 14, color: UIColor.darkGray)

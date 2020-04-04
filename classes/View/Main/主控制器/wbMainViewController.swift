@@ -55,7 +55,9 @@ extension wbMainViewController{
     private func setupChildcontrollers(){
         
         let array = [
-            ["clsname":"wbhomeViewController","title" : "首页","imagename":"home"],
+            ["clsname":"wbhomeViewController","title" : "首页","imagename":"home",
+                "visitorinfo":["imagename":"","message":"哈哈"]
+            ],
             ["clsname":"wbmessageViewController","title":"消息","imagename":"message_center"],
             ["clsname":"UIViewController"],
             ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover"],
@@ -64,24 +66,24 @@ extension wbMainViewController{
         ]
         var arraym = [UIViewController]()
         for dict in array {
-            arraym.append(controller(dict:dict))
+            arraym.append(controller(dict: dict as! [String : AnyObject]))
         }
 viewControllers = arraym
         
     }
-    private func controller(dict:[String:String]) ->UIViewController{
-        guard let clsname = dict["clsname"],
-            let title = dict["title"],
-            let imagename = dict["imagename"],
+    private func controller(dict:[String:AnyObject]) ->UIViewController{
+        guard let clsname = dict["clsname"]as? String,
+            let title = dict["title"]as? String,
+            let imagename = dict["imagename"]as? String,
             let cls = NSClassFromString(Bundle.main.namespace + "." + clsname) as? UIViewController.Type
         else{
                 return UIViewController()
                 
         }
         let vc = cls.init()
-        vc.title = title
-        vc.tabBarItem.image = UIImage(named: "tabbar_" + imagename)
-        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imagename+"_selected")?.withRenderingMode(.alwaysOriginal)
+        vc.title = title as?String
+        vc.tabBarItem.image = UIImage(named: "tabbar_" + imagename as! String)
+        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imagename  as! String+"_selected")?.withRenderingMode(.alwaysOriginal)
         
         //设置字体
         vc.tabBarItem.setTitleTextAttributes(
