@@ -25,6 +25,8 @@ class WBvisitorView: UIView {
                        return
                    }
                    iconview.image = UIImage(named: imgname)
+            //其他控制器不显示小房子
+            houseview.isHidden = true
         }
     }
     
@@ -59,6 +61,8 @@ extension WBvisitorView{
         addSubview(tiplabel)
         addSubview(regisisterbut)
         addSubview(loginbut)
+        //文本居中
+        tiplabel.textAlignment = .center
         //取消auto
         for v in subviews{
             v.translatesAutoresizingMaskIntoConstraints = false

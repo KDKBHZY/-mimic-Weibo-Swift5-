@@ -56,19 +56,19 @@ extension wbMainViewController{
         
         let array = [
             ["clsname":"wbhomeViewController","title" : "首页","imagename":"home",
-                "visitorInfo":["imagename":"","message":"关注一些人，康康有什么"]
+                "visitorInfo":["imagename":"","message":"关注一些人-------看看有什么惊喜"]
             ],
             
             ["clsname":"wbmessageViewController","title":"消息","imagename":"message_center",
-            "visitorInfo":["imagename":"visitordiscover_image_message","message":"登录后，会收到信息"]],
+            "visitorInfo":["imagename":"visitordiscover_image_message","message":"登录后---------会收到信息"]],
             
             ["clsname":"UIViewController"],
             
             ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover",
-            "visitorInfo":["imagename":"","message":"登录后，最新的消息"]],
+            "visitorInfo":["imagename":"","message":"登录后----------最新的消息"]],
             
             ["clsname":"wbprofileViewController","title" : "我","imagename":"profile",
-            "visitorInfo":["imagename":"visitordiscover_image_profile","message":"登录后，你的个人资料"]],
+            "visitorInfo":["imagename":"visitordiscover_image_profile","message":"登录后---------你的个人资料"]],
 
         ]
         (array as NSArray).write(toFile: "/Users/zyh/Desktop/Weibo/demo.plist" , atomically: true)
