@@ -12,7 +12,7 @@ import UIKit
 class wbbaseViewController: UIViewController {
     var visitInfodict:[String:String]?
    //用户登录
-    var usertlogon = false
+    var usertlogon = true
     //表格视图
     var tableview:UITableView?
     var refreshControl:UIRefreshControl?

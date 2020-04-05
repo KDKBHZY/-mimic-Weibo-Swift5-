@@ -53,32 +53,20 @@ extension wbMainViewController{
        }
        
     private func setupChildcontrollers(){
-        
-        let array = [
-            ["clsname":"wbhomeViewController","title" : "首页","imagename":"home",
-                "visitorInfo":["imagename":"","message":"关注一些人-------看看有什么惊喜"]
-            ],
-            
-            ["clsname":"wbmessageViewController","title":"消息","imagename":"message_center",
-            "visitorInfo":["imagename":"visitordiscover_image_message","message":"登录后---------会收到信息"]],
-            
-            ["clsname":"UIViewController"],
-            
-            ["clsname":"wbdiscoverViewController","title" : "发现","imagename":"discover",
-            "visitorInfo":["imagename":"","message":"登录后----------最新的消息"]],
-            
-            ["clsname":"wbprofileViewController","title" : "我","imagename":"profile",
-            "visitorInfo":["imagename":"visitordiscover_image_profile","message":"登录后---------你的个人资料"]],
+        //从bundle加载json
+        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil) ,
+            let data = NSData(contentsOfFile: path),
+            let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as?[[String:AnyObject]]
 
-        ]
-        let data = try? JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        let fileurl = NSURL.fileURL(withPath: "/Users/zyh/Desktop/Weibo/demo.json")
-        try?  (data as NSData?)?.write(to: fileurl)
-        (array as NSArray).write(toFile: "/Users/zyh/Desktop/Weibo/demo.plist" , atomically: true)
+        else{
+            return
+        }
+//遍历数组，创建控制器
         var arraym = [UIViewController]()
         for dict in array {
             arraym.append(controller(dict: dict as [String : AnyObject]))
         }
+        //设置子控制器
 viewControllers = arraym
         
     }
