@@ -22,6 +22,7 @@ class WBvisitorView: UIView {
                    tiplabel.text = message
                    //设置图像
                    if imgname == ""{
+                    startAnimation()
                        return
                    }
                    iconview.image = UIImage(named: imgname)
@@ -121,5 +122,17 @@ extension WBvisitorView{
                                          attribute: .notAnAttribute,
                                          multiplier: 1,
                                          constant: 80))
+    }
+    //旋转动画(shouye
+    private func startAnimation(){
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.toValue = 2 * Double.pi
+        animation.repeatCount = MAXFLOAT
+        animation.duration = 15
+        //完成移除
+        animation.isRemovedOnCompletion = false
+
+        //添加到涂层
+        iconview.layer.add(animation, forKey: nil)
     }
 }

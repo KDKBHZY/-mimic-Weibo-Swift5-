@@ -29,6 +29,7 @@
 		060424C2242E0E0F002B34F4 /* NSString+CZHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 060424B3242E0E0F002B34F4 /* NSString+CZHash.m */; };
 		060424C3242E0E0F002B34F4 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 060424B6242E0E0F002B34F4 /* NSAttributedString+CZAdditon.m */; };
 		060424C4242E0E0F002B34F4 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 060424B7242E0E0F002B34F4 /* NSArray+Log.m */; };
+		0620AB2D2439F2C5007A8248 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 0620AB2C2439F2C5007A8248 /* main.json */; };
 		068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */; };
 		068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */; };
 		06A6C1762436039900A383E3 /* WBvisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A6C1752436039900A383E3 /* WBvisitorView.swift */; };
@@ -74,6 +75,7 @@
 		060424B7242E0E0F002B34F4 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		060424B8242E0E0F002B34F4 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		060424C5242E0E59002B34F4 /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Weibo-Bridge.h"; path = "../classes/Weibo-Bridge.h"; sourceTree = "<group>"; };
+		0620AB2C2439F2C5007A8248 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBdemoViewController.swift; sourceTree = "<group>"; };
 		068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		06A6C1752436039900A383E3 /* WBvisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBvisitorView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		06DFF6DE243098F300813EC6 /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				0620AB2C2439F2C5007A8248 /* main.json */,
 				06042497242DFD04002B34F4 /* wbnavigationController.swift */,
 				06042495242DFD04002B34F4 /* wbMainViewController.swift */,
 			);
@@ -334,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0620AB2D2439F2C5007A8248 /* main.json in Resources */,
 				06042480242DF934002B34F4 /* LaunchScreen.storyboard in Resources */,
 				0604247D242DF934002B34F4 /* Assets.xcassets in Resources */,
 			);

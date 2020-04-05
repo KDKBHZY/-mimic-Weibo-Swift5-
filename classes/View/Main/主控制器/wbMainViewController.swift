@@ -71,6 +71,9 @@ extension wbMainViewController{
             "visitorInfo":["imagename":"visitordiscover_image_profile","message":"登录后---------你的个人资料"]],
 
         ]
+        let data = try? JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        let fileurl = NSURL.fileURL(withPath: "/Users/zyh/Desktop/Weibo/demo.json")
+        try?  (data as NSData?)?.write(to: fileurl)
         (array as NSArray).write(toFile: "/Users/zyh/Desktop/Weibo/demo.plist" , atomically: true)
         var arraym = [UIViewController]()
         for dict in array {

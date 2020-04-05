@@ -1,0 +1,41 @@
+[
+  {
+    "visitorInfo" : {
+      "imagename" : "",
+      "message" : "关注一些人-------看看有什么惊喜"
+    },
+    "clsname" : "wbhomeViewController",
+    "title" : "首页",
+    "imagename" : "home"
+  },
+  {
+    "imagename" : "message_center",
+    "visitorInfo" : {
+      "message" : "登录后---------会收到信息",
+      "imagename" : "visitordiscover_image_message"
+    },
+    "title" : "消息",
+    "clsname" : "wbmessageViewController"
+  },
+  {
+    "clsname" : "UIViewController"
+  },
+  {
+    "imagename" : "discover",
+    "clsname" : "wbdiscoverViewController",
+    "title" : "发现",
+    "visitorInfo" : {
+      "imagename" : "",
+      "message" : "登录后----------最新的消息"
+    }
+  },
+  {
+    "title" : "我",
+    "clsname" : "wbprofileViewController",
+    "imagename" : "profile",
+    "visitorInfo" : {
+      "imagename" : "visitordiscover_image_profile",
+      "message" : "登录后---------你的个人资料"
+    }
+  }
+]
