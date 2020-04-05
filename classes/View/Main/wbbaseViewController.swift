@@ -115,7 +115,7 @@ extension wbbaseViewController:UITableViewDelegate,UITableViewDataSource{
             isPullup = true
             loaddata()
         }
-        print("section")
+       
         
     }
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
