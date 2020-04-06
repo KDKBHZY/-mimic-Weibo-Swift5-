@@ -12,7 +12,7 @@ import UIKit
 class wbbaseViewController: UIViewController {
     var visitInfodict:[String:String]?
    //用户登录
-    var usertlogon = true
+    var usertlogon = false
     //表格视图
     var tableview:UITableView?
     var refreshControl:UIRefreshControl?
@@ -61,6 +61,9 @@ extension wbbaseViewController{
         let visitview = WBvisitorView(frame: view.bounds)
        view.insertSubview(visitview, belowSubview: navigationbar)
         visitview.visitorInfo = visitInfodict
+        visitview.loginbut.addTarget(self, action:#selector(login), for: .touchUpInside)
+        visitview.regisisterbut.addTarget(self, action:#selector(register), for: .touchUpInside)
+
     }
 //    设置导航条
     private func setupnavigationbar(){
@@ -122,4 +125,13 @@ extension wbbaseViewController:UITableViewDelegate,UITableViewDataSource{
 //           return 10
 //       }
     
+}
+//监听访客视图
+extension wbbaseViewController{
+    @objc private func login(){
+        print("用户登录")
+    }
+    @objc private func register(){
+          print("用户注册")
+      }
 }

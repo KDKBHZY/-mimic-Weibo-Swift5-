@@ -9,6 +9,8 @@
 import UIKit
 //访客视图
 class WBvisitorView: UIView {
+    lazy var regisisterbut:UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.darkGray,backgroundImageName: "common_button_white_disable")
+       lazy var loginbut:UIButton = UIButton.cz_textButton("登录", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange,backgroundImageName: "common_button_white_disable")
     //设置访客视图信息
 
     var visitorInfo:[String:String]?{
@@ -49,8 +51,7 @@ class WBvisitorView: UIView {
     private lazy var houseview = UIImageView(image: UIImage(named:"visitordiscover_feed_image_house"))
     private lazy var tiplabel:UILabel = UILabel.cz_label(withText: "关注一些人-------看看有什么惊喜", fontSize: 14, color: UIColor.darkGray)
 
-    private lazy var regisisterbut:UIButton = UIButton.cz_textButton("注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.darkGray,backgroundImageName: "common_button_white_disable")
-    private lazy var loginbut:UIButton = UIButton.cz_textButton("登录", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange,backgroundImageName: "common_button_white_disable")
+  
 }
 extension WBvisitorView{
     func setupui() {

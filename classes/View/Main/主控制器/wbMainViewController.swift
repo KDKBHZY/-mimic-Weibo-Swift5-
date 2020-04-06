@@ -53,10 +53,20 @@ extension wbMainViewController{
        }
        
     private func setupChildcontrollers(){
+        //获取data沙河路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                   let jsonpath = (docDir as NSString).appendingPathComponent("main.json")
+                  var data = NSData(contentsOfFile: jsonpath)
+        //判断data是否有内容
+        if data == nil{
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            //从bundle加载
+            data = NSData(contentsOfFile: path!)
+        }
+        //data由内容
+        
         //从bundle加载json
-        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil) ,
-            let data = NSData(contentsOfFile: path),
-            let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as?[[String:AnyObject]]
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as?[[String:AnyObject]]
 
         else{
             return
