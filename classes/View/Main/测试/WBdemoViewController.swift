@@ -22,9 +22,9 @@ class WBdemoViewController: wbbaseViewController {
 }
 extension WBdemoViewController{
     //重写
-    override func setupui() {
-//        设置右侧控制器
-        super .setupui()
-       navitem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(shownext))
+  @objc  override func setuptableview() {
+        super .setuptableview()
+         navitem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(shownext))
     }
+    
 }

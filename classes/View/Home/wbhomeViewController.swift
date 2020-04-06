@@ -63,11 +63,11 @@ extension wbhomeViewController{
 
 //设置界面
 extension wbhomeViewController{
-    override func setupui() {
-        super.setupui()
-      
-        navitem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showfriends))
-        tableview?.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+   override func setuptableview() {
+         super.setuptableview()
+             
+               navitem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showfriends))
+               tableview?.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
     }
  
 }

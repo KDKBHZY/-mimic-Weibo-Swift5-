@@ -18,7 +18,7 @@ class wbbaseViewController: UIViewController {
     var refreshControl:UIRefreshControl?
     //下拉刷新标记
     var isPullup = false
-     lazy var navigationbar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 74))
+    lazy var navigationbar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(),  height: 74))
     //自定义导航条目
 
     lazy var navitem = UINavigationItem()
@@ -45,7 +45,7 @@ loaddata()
 }
  //设置界面
 extension wbbaseViewController{
-    @objc func setupui(){
+    @objc private  func setupui(){
         view.backgroundColor = UIColor.white
         //取消自动缩进
         automaticallyAdjustsScrollViewInsets = false
@@ -63,7 +63,9 @@ extension wbbaseViewController{
         visitview.visitorInfo = visitInfodict
         visitview.loginbut.addTarget(self, action:#selector(login), for: .touchUpInside)
         visitview.regisisterbut.addTarget(self, action:#selector(register), for: .touchUpInside)
-
+//设置导航条按钮
+        navitem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navitem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
 //    设置导航条
     private func setupnavigationbar(){
@@ -80,8 +82,8 @@ extension wbbaseViewController{
                      // 3> 设置系统按钮的文字渲染颜色
                 navigationbar.tintColor = UIColor.orange
     }
-    //设置表格视图
-    private func setuptableview(){
+    //设置表格视图(子类重写此方法)
+    @objc func setuptableview(){
         tableview = UITableView(frame: view.bounds, style: .plain)
               //设置数据源代理，
         tableview?.dataSource = self
