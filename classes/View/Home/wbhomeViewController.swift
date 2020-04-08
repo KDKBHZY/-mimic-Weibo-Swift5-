@@ -17,6 +17,16 @@ private lazy var statuslist = [String]()
 
     }
     override func loaddata() {
+        
+        let urlstring = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let param = ["access_token":"2.00r5DZaFpALVFE63bce6e836QosGZC"]
+//        WBnetworktools.shared.get(urlstring, parameters: param, headers: nil, progress: nil, success: { (_, json) in
+//            print(json)
+//        }) { (_, error) in
+//            print("网络请求失败")
+//        }
+        WBnetworktools.shared.request(URLString: urlstring, parameters: param as! [String : AnyObject])
+        
         //模拟延迟加载数据
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){
             
