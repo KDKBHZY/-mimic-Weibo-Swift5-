@@ -36,6 +36,7 @@
 		06C96BEE243DB97B001419E8 /* WBnetworktools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C96BED243DB97B001419E8 /* WBnetworktools.swift */; };
 		06C96BF3243DC0B2001419E8 /* Pods_传智微博.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C96BF2243DC0B2001419E8 /* Pods_传智微博.framework */; };
 		06C96BF4243DC0B2001419E8 /* Pods_传智微博.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C96BF2243DC0B2001419E8 /* Pods_传智微博.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06C96BF7243DD86C001419E8 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C96BF6243DD86B001419E8 /* WBNetworkManager+Extension.swift */; };
 		06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		06A6C1752436039900A383E3 /* WBvisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBvisitorView.swift; sourceTree = "<group>"; };
 		06C96BED243DB97B001419E8 /* WBnetworktools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBnetworktools.swift; sourceTree = "<group>"; };
 		06C96BF2243DC0B2001419E8 /* Pods_传智微博.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_传智微博.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06C96BF6243DD86B001419E8 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		A5AE148BFECB233BCF6BDF94 /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB1C5ABF43FA17ED52D978A /* Pods-传智微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-传智微博.release.xcconfig"; path = "Target Support Files/Pods-传智微博/Pods-传智微博.release.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		06C96BEC243DB937001419E8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				06C96BF6243DD86B001419E8 /* WBNetworkManager+Extension.swift */,
 				06C96BED243DB97B001419E8 /* WBnetworktools.swift */,
 			);
 			path = Network;
@@ -461,6 +464,7 @@
 				0604249B242DFD04002B34F4 /* wbprofileViewController.swift in Sources */,
 				06042498242DFD04002B34F4 /* wbhomeViewController.swift in Sources */,
 				060424BF242E0E0F002B34F4 /* UIButton+CZAddition.m in Sources */,
+				06C96BF7243DD86C001419E8 /* WBNetworkManager+Extension.swift in Sources */,
 				068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */,
 				06042474242DF933002B34F4 /* AppDelegate.swift in Sources */,
 				060424C2242E0E0F002B34F4 /* NSString+CZHash.m in Sources */,
