@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,8 +33,25 @@
 		068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */; };
 		068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */; };
 		06A6C1762436039900A383E3 /* WBvisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A6C1752436039900A383E3 /* WBvisitorView.swift */; };
+		06C96BEE243DB97B001419E8 /* WBnetworktools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C96BED243DB97B001419E8 /* WBnetworktools.swift */; };
+		06C96BF3243DC0B2001419E8 /* Pods_传智微博.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C96BF2243DC0B2001419E8 /* Pods_传智微博.framework */; };
+		06C96BF4243DC0B2001419E8 /* Pods_传智微博.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C96BF2243DC0B2001419E8 /* Pods_传智微博.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		06C96BF5243DC0B2001419E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				06C96BF4243DC0B2001419E8 /* Pods_传智微博.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		06042470242DF933002B34F4 /* 传智微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "传智微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +96,12 @@
 		068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBdemoViewController.swift; sourceTree = "<group>"; };
 		068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		06A6C1752436039900A383E3 /* WBvisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBvisitorView.swift; sourceTree = "<group>"; };
+		06C96BED243DB97B001419E8 /* WBnetworktools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBnetworktools.swift; sourceTree = "<group>"; };
+		06C96BF2243DC0B2001419E8 /* Pods_传智微博.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_传智微博.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		A5AE148BFECB233BCF6BDF94 /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB1C5ABF43FA17ED52D978A /* Pods-传智微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-传智微博.release.xcconfig"; path = "Target Support Files/Pods-传智微博/Pods-传智微博.release.xcconfig"; sourceTree = "<group>"; };
+		C97ED5DAA83642DD30E58244 /* Pods-传智微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-传智微博.debug.xcconfig"; path = "Target Support Files/Pods-传智微博/Pods-传智微博.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C96BF3243DC0B2001419E8 /* Pods_传智微博.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +123,8 @@
 				06042471242DF933002B34F4 /* Products */,
 				06042487242DFD04002B34F4 /* classes */,
 				06042473242DF933002B34F4 /* AppDelegate.swift */,
+				FF602006220C6C5D252E364C /* Pods */,
+				3C78C86976765EA02D1568BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +168,7 @@
 		06042489242DFD04002B34F4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				06C96BEC243DB937001419E8 /* Network */,
 				06EA0F5D242E190A0057CAE2 /* Extensions */,
 				0604249F242E0E0F002B34F4 /* Additions */,
 			);
@@ -259,6 +285,14 @@
 			path = "访客";
 			sourceTree = "<group>";
 		};
+		06C96BEC243DB937001419E8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				06C96BED243DB97B001419E8 /* WBnetworktools.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		06DFF6DE243098F300813EC6 /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +312,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3C78C86976765EA02D1568BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06C96BF2243DC0B2001419E8 /* Pods_传智微博.framework */,
+				A5AE148BFECB233BCF6BDF94 /* Pods_____.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF602006220C6C5D252E364C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C97ED5DAA83642DD30E58244 /* Pods-传智微博.debug.xcconfig */,
+				AEB1C5ABF43FA17ED52D978A /* Pods-传智微博.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,9 +337,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06042484242DF934002B34F4 /* Build configuration list for PBXNativeTarget "传智微博" */;
 			buildPhases = (
+				B085033DB5EA99FC9F5A73F5 /* [CP] Check Pods Manifest.lock */,
 				0604246C242DF933002B34F4 /* Sources */,
 				0604246D242DF933002B34F4 /* Frameworks */,
 				0604246E242DF933002B34F4 /* Resources */,
+				35946D20A86933CA7B0EC23D /* [CP] Embed Pods Frameworks */,
+				06C96BF5243DC0B2001419E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -345,6 +400,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35946D20A86933CA7B0EC23D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-传智微博/Pods-传智微博-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-传智微博/Pods-传智微博-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-传智微博/Pods-传智微博-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B085033DB5EA99FC9F5A73F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-传智微博-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0604246C242DF933002B34F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -373,6 +470,7 @@
 				060424BC242E0E0F002B34F4 /* UILabel+CZAddition.m in Sources */,
 				060424BE242E0E0F002B34F4 /* NSString+CZPath.m in Sources */,
 				060424B9242E0E0F002B34F4 /* UIColor+CZAddition.m in Sources */,
+				06C96BEE243DB97B001419E8 /* WBnetworktools.swift in Sources */,
 				060424BA242E0E0F002B34F4 /* UIView+CZAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +605,7 @@
 		};
 		06042485242DF934002B34F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C97ED5DAA83642DD30E58244 /* Pods-传智微博.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +625,7 @@
 		};
 		06042486242DF934002B34F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEB1C5ABF43FA17ED52D978A /* Pods-传智微博.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
