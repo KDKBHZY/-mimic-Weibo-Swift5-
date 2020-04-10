@@ -19,7 +19,7 @@ class wbhomeViewController: wbbaseViewController {
     }
     override func loaddata() {
         
-        listviewmodel.loadStatus{(isSuccess)   in
+        listviewmodel.loadStatus(self.isPullup){(isSuccess)   in
             print("加载刷新结束")
                        //结束刷新控件
                        self.refreshControl?.endRefreshing()
