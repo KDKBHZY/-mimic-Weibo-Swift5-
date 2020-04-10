@@ -54,6 +54,10 @@ static let shared = WBnetworktools()
     ///   - parameters: 参数字典
     func request(methond:WBHttpmethond = .Get, URLString:String,parameters:[String:AnyObject]?,
               completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()){
+        //针对403
+       
+        
+        
          let success = { (task: URLSessionDataTask, json: Any?)->() in
                    
             completion(json as AnyObject?, true)
@@ -63,6 +67,16 @@ static let shared = WBnetworktools()
                    print("网络请求错误\(error)")
             completion(nil, false)
                }
+        
+        //处理403状态码
+        if (tasks as? HTTPURLResponse)?.statusCode == 403 {
+                       print("Token 过期了")
+                       
+                       // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
+//                       NotificationCenter.default.post(
+//                           name: NSNotification.Name(rawValue: WBUserShouldLoginNotification),
+//                           object: "bad token")
+                   }
                
         if methond == .Get{
             get(URLString, parameters: parameters, headers: nil, progress: nil, success: success , failure: failure)
