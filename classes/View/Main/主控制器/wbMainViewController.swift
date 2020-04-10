@@ -129,6 +129,11 @@ extension wbMainViewController{
                 //设置首页badge
                 self.tabBar.items?[0].badgeValue = count>0 ? "\(count)" :nil
                    print("有\(count)条新微博")
+                //设置app的badge number
+                if(count > 0){
+                UIApplication.shared.applicationIconBadgeNumber = count
+                }
+                
                }
            }
 }

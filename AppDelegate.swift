@@ -15,6 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound,.carPlay]) { (success, error) in
+            print("授权")
+        }
+        let notifySetings = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
+        
+    //通知条幅
+        application.registerUserNotificationSettings(notifySetings)
+        
         window = UIWindow()
         window?.backgroundColor = UIColor.white
                window?.rootViewController = wbMainViewController()
