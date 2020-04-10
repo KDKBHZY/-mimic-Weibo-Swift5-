@@ -32,25 +32,25 @@ extension WBnetworktools {
        
     }
 //
-//    /// 返回微博的未读数量 - 定时刷新，不需要提示是否失败！
-//    func unreadCount(completion: (_ count: Int)->()) {
+    /// 返回微博的未读数量 - 定时刷新，不需要提示是否失败！
+    func unreadCount(completion:  @escaping(_ count: Int)->()
+) {
+        guard let uid = uid else {
+            return
+        }
+
+        let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
+
+        let params = ["uid": uid]
+
+        tokenRequest(URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+            print(json as Any)
+            let dict = json as? [String: AnyObject]
+            let count = dict?["status"] as? Int
 //
-//        guard let uid = userAccount.uid else {
-//            return
-//        }
-//
-//        let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
-//
-//        let params = ["uid": uid]
-//
-//        tokenRequest(URLString: urlString, parameters: params) { (json, isSuccess) in
-//
-//            let dict = json as? [String: AnyObject]
-//            let count = dict?["status"] as? Int
-//
-//            completion(count: count ?? 0)
-//        }
-//    }
+            completion(count ?? 0)
+        }
+    }
 }
 //
 //// MARK: - 发布微博

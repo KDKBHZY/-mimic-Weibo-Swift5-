@@ -19,7 +19,7 @@ class WBnetworktools: AFHTTPSessionManager {
 static let shared = WBnetworktools()
     //都基于次令牌
     var accesstoken:String? = "2.00r5DZaFpALVFE63bce6e836QosGZC"
-    
+    var uid:String? = "3745843511"
     func tokenRequest(methond:WBHttpmethond = .Get, URLString:String,parameters:[String:AnyObject]?,
     completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()){
         //判断token

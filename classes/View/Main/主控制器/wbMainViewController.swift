@@ -14,6 +14,9 @@ class wbMainViewController: UITabBarController {
         super.viewDidLoad()
               setupChildcontrollers()
         setupComposeButton()
+        WBnetworktools.shared.unreadCount(){(count) in
+            print("有\(count)条新微博")
+        }
         // Do any additional setup after loading the view.
     }
     private lazy var composeButton: UIButton = UIButton.cz_imageButton(

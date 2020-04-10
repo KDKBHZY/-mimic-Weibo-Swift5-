@@ -19,13 +19,15 @@ class wbhomeViewController: wbbaseViewController {
     }
     override func loaddata() {
         
-        listviewmodel.loadStatus(self.isPullup){(isSuccess)   in
+        listviewmodel.loadStatus(self.isPullup){(isSuccess,shouldresresh)   in
             print("加载刷新结束")
                        //结束刷新控件
                        self.refreshControl?.endRefreshing()
                        self.isPullup = false
                    //刷新表格
+            if(shouldresresh){
                        self.tableview?.reloadData()
+            }
         }
 
 //        WBnetworktools.shared.statusList { (list, isSuccess) in

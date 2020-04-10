@@ -7,12 +7,21 @@
 //
 
 import Foundation
+private let maxPullupTryTimes = 3
+
 class WBStatusListViewModel {
+    private var pullupErrorTimes = 0
 
 /// 微博视图模型数组懒加载
 lazy var statusList = [WBstatus]()
 /// 上拉刷新错误次数
-    func loadStatus(_ pullup:Bool,completion:@escaping ( _ isSuccess: Bool)->())  {
+    func loadStatus(_ pullup:Bool,completion:@escaping ( _ isSuccess: Bool,_ shouldRefresh:Bool)->())  {
+        if pullup && pullupErrorTimes > maxPullupTryTimes {
+                   
+            completion(true, false)
+                   
+                   return
+               }
         // since_id 取出数组中第一条微博的 id
         let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
                // 上拉刷新，取出数组的最后一条微博的 id
@@ -20,7 +29,7 @@ lazy var statusList = [WBstatus]()
         WBnetworktools.shared.statusList(since_id: 0, max_id:0)  { (list, isSuccess) in
             //1.字典转模型
             guard let array = NSArray.yy_modelArray(with: WBstatus.self, json: list ?? [])as? [WBstatus] else{
-                completion(isSuccess)
+                completion(isSuccess,false)
                 return
             }
             //拼接在数组前面
@@ -32,8 +41,16 @@ lazy var statusList = [WBstatus]()
                            // 下拉刷新，应该将结果数组拼接在数组前面
                            self.statusList = array + self.statusList
                        }
-            //3.完成回调
-            completion(isSuccess)
+            if pullup && array.count == 0 {
+                
+                self.pullupErrorTimes += 1
+                
+                completion(isSuccess, false)
+            }else{
+                //3.完成回调
+                           completion(isSuccess, true)
+            }
+           
         }
     }
 }
