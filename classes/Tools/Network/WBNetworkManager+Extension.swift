@@ -16,15 +16,15 @@ extension WBnetworktools {
 //    / - parameter since_id:   返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0
 //    / - parameter max_id:     返回ID小于或等于max_id的微博，默认为0
 //    / - parameter completion: 完成回调[list: 微博字典数组/是否成功]
-    func statusList(completion:  @escaping(_ list: [[String: AnyObject]]?, _ isSuccess: Bool)->()) {
+    func statusList(since_id:Int64 = 0, max_id:Int64 = 0, completion:  @escaping(_ list: [[String: AnyObject]]?, _ isSuccess: Bool)->()) {
 
         let urlstring = "https://api.weibo.com/2/statuses/home_timeline.json"
 //        let params = ["access_token":"2.00r5DZaFpALVFE63bce6e836QosGZC"]
 
         // Swift 中 Int 可以转换成 AnyObject/ 但是 Int64 不行
-//        let params = ["since_id": "\(since_id)",
-//                      "max_id": "\(max_id > 0 ? max_id - 1 : 0)"]
-        tokenRequest(URLString: urlstring, parameters:nil ) { (json, isSuccess) in
+       let params = ["since_id": "\(since_id)",
+                     "max_id": "\(max_id > 0 ? max_id - 1 : 0)"]
+        tokenRequest(URLString: urlstring, parameters:params as [String : AnyObject] ) { (json, isSuccess) in
             //从json获取字典数据
             let result = json?["statuses"] as?[[String:AnyObject]]
             completion(result,isSuccess)

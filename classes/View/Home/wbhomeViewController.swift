@@ -28,9 +28,9 @@ class wbhomeViewController: wbbaseViewController {
                        self.tableview?.reloadData()
         }
 
-        WBnetworktools.shared.statusList { (list, isSuccess) in
-            print(list as Any)
-        }
+//        WBnetworktools.shared.statusList { (list, isSuccess) in
+//            print(list as Any)
+//        }
     
     }
     @objc private func showfriends(){
