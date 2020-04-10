@@ -44,7 +44,7 @@ extension WBnetworktools {
         let params = ["uid": uid]
 
         tokenRequest(URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-            print(json as Any)
+//            print(json as Any)
             let dict = json as? [String: AnyObject]
             let count = dict?["status"] as? Int
 //

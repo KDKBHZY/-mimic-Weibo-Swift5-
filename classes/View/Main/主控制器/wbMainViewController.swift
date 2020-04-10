@@ -9,15 +9,19 @@
 import UIKit
 
 class wbMainViewController: UITabBarController {
+    //定时器
+    private var timer:Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
               setupChildcontrollers()
         setupComposeButton()
-        WBnetworktools.shared.unreadCount(){(count) in
-            print("有\(count)条新微博")
-        }
+        setuptimer()
+      
         // Do any additional setup after loading the view.
+    }
+    deinit {
+        timer?.invalidate()
     }
     private lazy var composeButton: UIButton = UIButton.cz_imageButton(
           "tabbar_compose_icon_add",
@@ -112,4 +116,19 @@ viewControllers = arraym
         return nav
         
     }
+}
+//时钟相关方法
+extension wbMainViewController{
+    private func setuptimer(){
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updatetimer), userInfo: nil, repeats: true)
+       
+        
+    }
+    @objc private func updatetimer(){
+               WBnetworktools.shared.unreadCount(){(count) in
+                //设置首页badge
+                self.tabBar.items?[0].badgeValue = count>0 ? "\(count)" :nil
+                   print("有\(count)条新微博")
+               }
+           }
 }
