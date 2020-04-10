@@ -10,8 +10,8 @@ import UIKit
 import YYModel
 //微博数据模型
 class WBstatus: NSObject {
-    var id:Int64 = 0
-    var text:String?
+   @objc var id:Int64 = 0
+   @objc var text: String?
     override var description: String{
         return yy_modelDescription()
     }
