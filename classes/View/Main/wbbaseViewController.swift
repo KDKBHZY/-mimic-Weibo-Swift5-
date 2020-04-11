@@ -130,7 +130,10 @@ extension wbbaseViewController:UITableViewDelegate,UITableViewDataSource{
 //监听访客视图
 extension wbbaseViewController{
     @objc private func login(){
+        
         print("用户登录")
+        //发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: wbusershouldlogin), object: nil)
     }
     @objc private func register(){
           print("用户注册")

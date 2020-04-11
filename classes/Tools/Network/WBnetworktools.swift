@@ -18,7 +18,7 @@ class WBnetworktools: AFHTTPSessionManager {
     //静态区
 static let shared = WBnetworktools()
     //都基于次令牌
-    var accesstoken:String? = "2.00r5DZaFpALVFE63bce6e836QosGZC"
+    var accesstoken:String? //= //"2.00r5DZaFpALVFE63bce6e836QosGZC"
     var uid:String? = "3745843511"
     var userlogin:Bool{
         return accesstoken != nil

@@ -19,9 +19,14 @@ class wbMainViewController: UITabBarController {
         setuptimer()
       //设置代理
         delegate = self
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userlogin), name: NSNotification.Name(rawValue: wbusershouldlogin), object: nil)
+      
     }
     deinit {
         timer?.invalidate()
+        //注销通知
+              NotificationCenter.default.removeObserver(self)
     }
     private lazy var composeButton: UIButton = UIButton.cz_imageButton(
           "tabbar_compose_icon_add",
@@ -36,7 +41,9 @@ class wbMainViewController: UITabBarController {
    func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
             return .portrait
         }
-    
+    @objc func userlogin(n:Notification){
+        print("用户登录通知")
+    }
    
 }
 extension wbMainViewController:UITabBarControllerDelegate{
