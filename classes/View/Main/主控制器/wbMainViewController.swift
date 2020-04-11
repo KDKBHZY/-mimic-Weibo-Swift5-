@@ -143,11 +143,14 @@ viewControllers = arraym
 //时钟相关方法
 extension wbMainViewController{
     private func setuptimer(){
-        timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(updatetimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(updatetimer), userInfo: nil, repeats: true)
        
         
     }
     @objc private func updatetimer(){
+        if !WBnetworktools.shared.userlogin{
+            return
+        }
                WBnetworktools.shared.unreadCount(){(count) in
                 //设置首页badge
                 self.tabBar.items?[0].badgeValue = count>0 ? "\(count)" :nil
