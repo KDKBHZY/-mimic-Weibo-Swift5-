@@ -43,6 +43,9 @@ class wbMainViewController: UITabBarController {
         }
     @objc func userlogin(n:Notification){
         print("用户登录通知")
+        //显现登录器
+        let nav = UINavigationController(rootViewController: WBOAuthViewController())
+        present(nav,animated: true,completion: nil)
     }
    
 }
