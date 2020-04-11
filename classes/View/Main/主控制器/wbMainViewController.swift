@@ -17,8 +17,8 @@ class wbMainViewController: UITabBarController {
               setupChildcontrollers()
         setupComposeButton()
         setuptimer()
-      
-        // Do any additional setup after loading the view.
+      //设置代理
+        delegate = self
     }
     deinit {
         timer?.invalidate()
@@ -39,7 +39,30 @@ class wbMainViewController: UITabBarController {
     
    
 }
-
+extension wbMainViewController:UITabBarControllerDelegate{
+    /// Description
+    /// - Parameters:
+    ///   - tabBarController: tabBarController
+    ///   - viewController: 目标控制器
+    /// - Returns: 是否切换到目标
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        //判断是否是UIviewcontroller
+        //获取索引
+        let index = (viewControllers! as NSArray).index(of: viewController)
+        //判断当前为首页
+        if selectedIndex == 0 && index == selectedIndex{
+            print("点击首页")
+        }
+        //让表格滚动到顶部
+        let nav = viewControllers?[0] as! UINavigationController
+        let vc = nav.viewControllers[0] as! wbhomeViewController
+        //滚动到顶部
+        vc.tableview?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+        //刷新表格
+        vc.tableview?.reloadData()
+        return !viewController.isMember(of: UIViewController.self)
+    }
+}
 
 extension wbMainViewController{
     /// 设置撰写按钮
@@ -49,7 +72,7 @@ extension wbMainViewController{
            // 计算按钮的宽度
         let count = CGFloat(children.count)
            // 将向内缩进的宽度
-           let w = tabBar.bounds.width / count-1
+           let w = tabBar.bounds.width / count
            
            // CGRectInset 正数向内缩进，负数向外扩展
            composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
@@ -101,7 +124,7 @@ viewControllers = arraym
         //设置访客信息
         vc.visitInfodict = visitordict
         vc.title = title as?String
-        vc.tabBarItem.image = UIImage(named: "tabbar_" + imagename as! String)
+        vc.tabBarItem.image = UIImage(named: "tabbar_" + imagename )
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imagename  as! String+"_selected")?.withRenderingMode(.alwaysOriginal)
         
         //设置字体
@@ -120,7 +143,7 @@ viewControllers = arraym
 //时钟相关方法
 extension wbMainViewController{
     private func setuptimer(){
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updatetimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(updatetimer), userInfo: nil, repeats: true)
        
         
     }
