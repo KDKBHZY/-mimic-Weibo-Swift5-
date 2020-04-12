@@ -28,14 +28,14 @@ class WBnetworktools: AFHTTPSessionManager {
     }()
     //都基于次令牌
     // = "2.00r5DZaFpALVFE63bce6e836QosGZC"
-    lazy var user = WBuseraccount()
+    lazy var useraccount = WBuseraccount()
     var userlogin:Bool{
-        return user.access_token != nil
+        return useraccount.access_token != nil
     }
     func tokenRequest(methond:WBHttpmethond = .Get, URLString:String,parameters:[String:AnyObject]?,
     completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()){
         //判断token
-        guard let token = user.access_token else {
+        guard let token = useraccount.access_token else {
                    
                    // 发送通知，提示用户登录
                    print("没有 token! 需要登录")

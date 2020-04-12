@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import YYModel
 // MARK: - 封装新浪微博的网络请求方法
 extension WBnetworktools {
     
@@ -35,7 +35,7 @@ extension WBnetworktools {
     /// 返回微博的未读数量 - 定时刷新，不需要提示是否失败！
     func unreadCount(completion:  @escaping(_ count: Int)->()
 ) {
-        guard let uid = user.uid else {
+        guard let uid = useraccount.uid else {
             return
         }
 
@@ -137,9 +137,9 @@ extension WBnetworktools {
             print(json as Any)
 //
 //            // 如果请求失败，对用户账户数据不会有任何影响
-//            // 直接用字典设置 userAccount 的属性
-//            self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
-//
+//            // 直接用字典设置 user 的属性
+            self.useraccount.yy_modelSet(with: json as! [AnyHashable : AnyObject])
+            self.useraccount.yy_modelSet(withJSON: json as Any)
 //            // 加载当前用户信息
 //            self.loadUserInfo(completion: { (dict) in
 //                // 使用用户信息字典设置用户账户信息(昵称和头像地址)
@@ -148,7 +148,7 @@ extension WBnetworktools {
 //                // 保存模型
 //                self.userAccount.saveAccount()
 //
-//                print(self.userAccount)
+            print(self.useraccount.access_token as Any)
 //
 //                // 用户信息加载完成再，完成回调
 //                completion(isSuccess: isSuccess)
