@@ -10,7 +10,7 @@ import UIKit
 //用户账户信息
 class WBuseraccount: NSObject {
     //访问令牌
-    var access_token:String?
+    var access_token:String? = "2.00r5DZaFpALVFE63bce6e836QosGZC"
     //用户id
     var uid:String?
     //开发者5年

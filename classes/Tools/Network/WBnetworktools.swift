@@ -27,15 +27,15 @@ class WBnetworktools: AFHTTPSessionManager {
         return instance
     }()
     //都基于次令牌
-    var accesstoken:String?// = "2.00r5DZaFpALVFE63bce6e836QosGZC"
-    var uid:String? = "3745843511"
+    // = "2.00r5DZaFpALVFE63bce6e836QosGZC"
+    lazy var user = WBuseraccount()
     var userlogin:Bool{
-        return accesstoken != nil
+        return user.access_token != nil
     }
     func tokenRequest(methond:WBHttpmethond = .Get, URLString:String,parameters:[String:AnyObject]?,
     completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()){
         //判断token
-        guard let token = accesstoken else {
+        guard let token = user.access_token else {
                    
                    // 发送通知，提示用户登录
                    print("没有 token! 需要登录")
