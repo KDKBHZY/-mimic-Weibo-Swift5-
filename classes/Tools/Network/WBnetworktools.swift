@@ -55,7 +55,7 @@ class WBnetworktools: AFHTTPSessionManager {
         }
         //设置参数字典
         parameters!["access_token"] = token as AnyObject
-        request(URLString: URLString, parameters: parameters, completion: completion)
+        request(methond: .Get, URLString: URLString, parameters: parameters, completion: completion)
 
     }
     
@@ -64,7 +64,7 @@ class WBnetworktools: AFHTTPSessionManager {
     ///   - methond: get/post
     ///   - URLString: Urlstring
     ///   - parameters: 参数字典
-    func request(methond:WBHttpmethond = .Get, URLString:String,parameters:[String:AnyObject]?,
+    func request(methond:WBHttpmethond, URLString:String,parameters:[String:AnyObject]?,
               completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()){
         //针对403
        
