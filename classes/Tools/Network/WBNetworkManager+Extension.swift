@@ -129,7 +129,7 @@ extension WBnetworktools {
         let params = ["client_id": webappkey,
                       "client_secret": websecret,
                       "grant_type": "authorization_code",
-                      "code": code,
+                      "code":code,
                       "redirect_uri": WBRedirectURI]
 //
 //        // 发起网络请求

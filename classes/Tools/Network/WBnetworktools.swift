@@ -16,9 +16,18 @@ enum WBHttpmethond {
 //网络管理工具
 class WBnetworktools: AFHTTPSessionManager {
     //静态区
-static let shared = WBnetworktools()
+    static let shared:WBnetworktools = {
+        
+        //实例化对象
+        let instance = WBnetworktools()
+        //响应反序列化支持的数组类型
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        //返回对象
+        return instance
+    }()
     //都基于次令牌
-    var accesstoken:String? //= //"2.00r5DZaFpALVFE63bce6e836QosGZC"
+    var accesstoken:String?// = "2.00r5DZaFpALVFE63bce6e836QosGZC"
     var uid:String? = "3745843511"
     var userlogin:Bool{
         return accesstoken != nil
