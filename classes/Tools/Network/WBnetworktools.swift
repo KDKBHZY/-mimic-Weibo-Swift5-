@@ -89,10 +89,7 @@ static let shared = WBnetworktools()
 //                print("网络请求失败")}
         }
         else{
-//        post(URLString, parameters: parameters, headers: nil, progress: nil, success: { (_, json) in
-//            print(json)
-//        }) { (_, error) in
-//            print("网络请求失败")}
+        post(URLString, parameters: parameters, headers: nil, progress: nil, success: success , failure: failure)
         }
     }
 }
