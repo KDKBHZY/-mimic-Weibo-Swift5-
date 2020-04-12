@@ -27,6 +27,7 @@ extension WBnetworktools {
         tokenRequest(URLString: urlstring, parameters:params as [String : AnyObject] ) { (json, isSuccess) in
             //从json获取字典数据
             let result = json?["statuses"] as?[[String:AnyObject]]
+
             completion(result,isSuccess)
         }
        
@@ -135,7 +136,19 @@ extension WBnetworktools {
 //        // 发起网络请求
         request(methond:.Post, URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
             print(json as Any)
-//
+//             //模型转字典
+               var dict = (json as? [String: AnyObject]) ?? [:]
+       // 需要删除 expires_in 值
+              dict.removeValue(forKey: "expires_in")
+            guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
+                let filePath = "useraccount.json".cz_appendDocumentDir()
+                       else {
+                           return
+                   }
+
+            (data as NSData).write(toFile: filePath, atomically: true)
+                   
+                   print("用户账户保存成功 \(filePath)")
 //            // 如果请求失败，对用户账户数据不会有任何影响
 //            // 直接用字典设置 user 的属性
             self.useraccount.yy_modelSet(with: json as! [AnyHashable : AnyObject])
@@ -146,7 +159,7 @@ extension WBnetworktools {
 //                self.userAccount.yy_modelSet(with: dict)
 //
 //                // 保存模型
-//                self.userAccount.saveAccount()
+            self.useraccount.saveAccount()
 //
             print(self.useraccount.access_token as Any)
 //

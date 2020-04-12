@@ -27,4 +27,7 @@ class WBuseraccount: NSObject {
         return yy_modelDescription()
     }
     
+    func saveAccount()  {
+       
+    }
 }
