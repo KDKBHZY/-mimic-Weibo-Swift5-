@@ -27,10 +27,11 @@ extension WBnetworktools {
         tokenRequest(URLString: urlstring, parameters:params as [String : AnyObject] ) { (json, isSuccess) in
             //从json获取字典数据
             let result = json?["statuses"] as?[[String:AnyObject]]
+            self.loadUserInfo()
 
             completion(result,isSuccess)
         }
-       
+
     }
 //
     /// 返回微博的未读数量 - 定时刷新，不需要提示是否失败！
@@ -45,7 +46,7 @@ extension WBnetworktools {
         let params = ["uid": uid]
 
         tokenRequest(URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-//            print(json as Any)
+            print(json as Any)
             let dict = json as? [String: AnyObject]
             let count = dict?["status"] as? Int
 //
@@ -94,26 +95,27 @@ extension WBnetworktools {
 //}
 //
 //// MARK: - 用户信息
-//extension WBNetworkManager {
+extension WBnetworktools {
 //
-//    /// 加载当前用户信息 - 用户登录后立即执行
-//    func loadUserInfo(completion: (dict: [String: AnyObject])->()) {
+//    /// 加载当前用户信息 - 用户登录后立即执行 completion: (dict: [String: AnyObject])->()
+    func loadUserInfo() {
 //
-//        guard let uid = userAccount.uid else {
-//            return
-//        }
+
+guard let uid = useraccount.uid else {
+    return
+}
+       let urlString = "https://api.weibo.com/2/users/show.json"
 //
-//        let urlString = "https://api.weibo.com/2/users/show.json"
-//
-//        let params = ["uid": uid]
+        let params = ["uid": uid]
 //
 //        // 发起网络请求
-//        tokenRequest(URLString: urlString, parameters: params) { (json, isSuccess) in
+        tokenRequest(URLString: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
 //            // 完成回调
+            print(json as Any)
 //            completion(dict: (json as? [String: AnyObject]) ?? [:])
-//        }
-//    }
-//}
+        }
+    }
+}
 //
 //// MARK: - OAuth相关方法
 extension WBnetworktools {
@@ -138,31 +140,34 @@ extension WBnetworktools {
             print(json as Any)
 //             //模型转字典
                var dict = (json as? [String: AnyObject]) ?? [:]
+          
+//            self.useraccount.setValuesForKeys(dict)
+//            print(self.useraccount as Any)
+
        // 需要删除 expires_in 值
               dict.removeValue(forKey: "expires_in")
             guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
-                let filePath = "useraccount.json".cz_appendDocumentDir()
+                let filePath =  accountfile.cz_appendDocumentDir()
                        else {
                            return
                    }
-
+            self.useraccount.yy_modelSet(withJSON:data )
             (data as NSData).write(toFile: filePath, atomically: true)
                    
                    print("用户账户保存成功 \(filePath)")
 //            // 如果请求失败，对用户账户数据不会有任何影响
 //            // 直接用字典设置 user 的属性
-            self.useraccount.yy_modelSet(with: json as! [AnyHashable : AnyObject])
-            self.useraccount.yy_modelSet(withJSON: json as Any)
+//            self.useraccount.yy_modelSet(with: dict as [AnyHashable : AnyObject])
+//            self.useraccount.yy_modelSet(withJSON: data as Any)
+           
 //            // 加载当前用户信息
-//            self.loadUserInfo(completion: { (dict) in
 //                // 使用用户信息字典设置用户账户信息(昵称和头像地址)
 //                self.userAccount.yy_modelSet(with: dict)
 //
 //                // 保存模型
             self.useraccount.saveAccount()
-//
-            print(self.useraccount.access_token as Any)
-//
+
+            //print(self.useraccount.access_token as Any)
 //                // 用户信息加载完成再，完成回调
 //                completion(isSuccess: isSuccess)
 //            })

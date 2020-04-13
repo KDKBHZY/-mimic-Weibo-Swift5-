@@ -49,7 +49,10 @@ extension wbbaseViewController{
         //取消自动缩进
         automaticallyAdjustsScrollViewInsets = false
          setupnavigationbar()
-        WBnetworktools.shared.userlogin ? setuptableview():setupVisitview()
+        if WBnetworktools.shared.userlogin {
+            setuptableview()
+            
+        } else{setupVisitview()}
 
      
         
@@ -92,6 +95,8 @@ extension wbbaseViewController{
         tableview?.contentInset = UIEdgeInsets(top: navigationbar.bounds.height, left: 0, bottom: 0, right: 0)
         //设置刷新控件
         refreshControl = UIRefreshControl()
+        //修改指示器锁紧
+        tableview?.scrollIndicatorInsets = tableview!.contentInset
         //添加到表格视图
         tableview?.addSubview(refreshControl!)
         refreshControl?.addTarget(self, action: #selector(loaddata), for: .valueChanged)

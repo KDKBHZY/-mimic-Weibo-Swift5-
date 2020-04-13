@@ -67,6 +67,22 @@ extension wbhomeViewController{
              
                navitem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showfriends))
                tableview?.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+    setupNavTitle()
     }
- 
+    /// 设置导航栏标题
+       private func setupNavTitle() {
+           
+//        let title = WBnetworktools.shared
+           
+        let button = UIButton.cz_textButton("hzy", fontSize: 20, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
+        
+          navitem.titleView = button
+           
+        button?.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+       }
+ @objc func clickTitleButton(btn: UIButton) {
+        
+        // 设置选中状态
+        btn.isSelected = !btn.isSelected
+    }
 }
