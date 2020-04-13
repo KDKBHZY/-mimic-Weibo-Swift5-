@@ -10,6 +10,14 @@ import UIKit
 
 class WBststuscellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var iconview: UIImageView!
+    
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var timelabel: UILabel!
+    //正文
+    @IBOutlet weak var statuslabel: UILabel!
+    //来源
+    @IBOutlet weak var source: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
