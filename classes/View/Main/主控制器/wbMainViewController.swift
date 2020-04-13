@@ -11,14 +11,16 @@ import UIKit
 class wbMainViewController: UITabBarController {
     //定时器
     private var timer:Timer?
+    private var timer1:Timer?
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
               setupChildcontrollers()
         setupComposeButton()
         setuptimer()
         //设置新特性
-        setupNewfeatureViews()
+        //setupNewfeatureViews()
       //设置代理
         delegate = self
         //注册通知
@@ -73,6 +75,8 @@ extension wbMainViewController:UITabBarControllerDelegate{
         //刷新表格
         vc.tableview?.reloadData()
         return !viewController.isMember(of: UIViewController.self)
+        vc.tabBarItem.badgeValue  = nil
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 }
 
@@ -178,14 +182,14 @@ extension wbMainViewController{
 extension wbMainViewController {
 
 /// 设置新特性视图
-private func setupNewfeatureViews() {
-    
-    // 0. 判断是否登录
-   
+    @objc private func setupNewfeatureViews() {
     
     // 1. 如果更新，显示新特性，否则显示欢迎
     let v = WBwelcome.welcomeView()
     // 2. 添加视图
     view.addSubview(v)
-}
+     
+  
+    }
+   
 }

@@ -328,8 +328,8 @@
             filePath = "classes/View/Main/&#x4e3b;&#x63a7;&#x5236;&#x5668;/wbMainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "updatetimer()"
             landmarkType = "7">
             <Locations>
@@ -456,8 +456,8 @@
             filePath = "classes/View/Main/&#x4e3b;&#x63a7;&#x5236;&#x5668;/wbMainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "setupNewfeatureViews()"
             landmarkType = "7">
          </BreakpointContent>

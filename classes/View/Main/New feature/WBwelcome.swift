@@ -9,7 +9,8 @@
 import UIKit
 
 class WBwelcome: UIView {
-   class func welcomeView() ->WBwelcome {
+   
+    class func welcomeView() ->WBwelcome {
         
         let nib = UINib(nibName: "wbwelcomeview", bundle: nil)
         
@@ -20,7 +21,7 @@ class WBwelcome: UIView {
         
         return v
     }
-
+   
    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
