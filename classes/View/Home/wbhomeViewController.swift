@@ -66,8 +66,11 @@ extension wbhomeViewController{
          super.setuptableview()
              
                navitem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showfriends))
-               tableview?.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+//               tableview?.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+    tableview?.register(    UINib(nibName: "wbstatus", bundle: nil)
+, forCellReuseIdentifier: cellid)
     setupNavTitle()
+    
     }
     /// 设置导航栏标题
        private func setupNavTitle() {

@@ -47,6 +47,8 @@
 		06D94891244083DC00013917 /* wbstatuslist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D94890244083DC00013917 /* wbstatuslist.swift */; };
 		06D948932440849300013917 /* WBstatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D948922440849300013917 /* WBstatus.swift */; };
 		06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */; };
+		06F04377244497E3000B6493 /* WBststuscellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F04376244497E3000B6493 /* WBststuscellTableViewCell.swift */; };
+		06F043792444980B000B6493 /* wbstatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F043782444980B000B6493 /* wbstatus.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +121,8 @@
 		06D94890244083DC00013917 /* wbstatuslist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wbstatuslist.swift; sourceTree = "<group>"; };
 		06D948922440849300013917 /* WBstatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBstatus.swift; sourceTree = "<group>"; };
 		06EA0F5B242E19050057CAE2 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		06F04376244497E3000B6493 /* WBststuscellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBststuscellTableViewCell.swift; sourceTree = "<group>"; };
+		06F043782444980B000B6493 /* wbstatus.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = wbstatus.xib; sourceTree = "<group>"; };
 		A5AE148BFECB233BCF6BDF94 /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB1C5ABF43FA17ED52D978A /* Pods-传智微博.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-传智微博.release.xcconfig"; path = "Target Support Files/Pods-传智微博/Pods-传智微博.release.xcconfig"; sourceTree = "<group>"; };
 		C97ED5DAA83642DD30E58244 /* Pods-传智微博.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-传智微博.debug.xcconfig"; path = "Target Support Files/Pods-传智微博/Pods-传智微博.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 		0604248C242DFD04002B34F4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				06F04375244497B6000B6493 /* statuscell */,
 				0604248D242DFD04002B34F4 /* wbhomeViewController.swift */,
 				065E3B2B2444823700D7601E /* wbtitlebutton.swift */,
 			);
@@ -367,6 +372,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		06F04375244497B6000B6493 /* statuscell */ = {
+			isa = PBXGroup;
+			children = (
+				06F04376244497E3000B6493 /* WBststuscellTableViewCell.swift */,
+				06F043782444980B000B6493 /* wbstatus.xib */,
+			);
+			path = statuscell;
+			sourceTree = "<group>";
+		};
 		3C78C86976765EA02D1568BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +463,7 @@
 			files = (
 				0620AB2D2439F2C5007A8248 /* main.json in Resources */,
 				06042480242DF934002B34F4 /* LaunchScreen.storyboard in Resources */,
+				06F043792444980B000B6493 /* wbstatus.xib in Resources */,
 				065E3B33244486D700D7601E /* wbwelcomeview.xib in Resources */,
 				0604247D242DF934002B34F4 /* Assets.xcassets in Resources */,
 			);
@@ -514,6 +529,7 @@
 				060424C3242E0E0F002B34F4 /* NSAttributedString+CZAdditon.m in Sources */,
 				060424C4242E0E0F002B34F4 /* NSArray+Log.m in Sources */,
 				06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */,
+				06F04377244497E3000B6493 /* WBststuscellTableViewCell.swift in Sources */,
 				065E3B312444853600D7601E /* WBnewfeatureview.swift in Sources */,
 				060424BB242E0E0F002B34F4 /* UIScreen+CZAddition.m in Sources */,
 				06042499242DFD04002B34F4 /* wbdiscoverViewController.swift in Sources */,
