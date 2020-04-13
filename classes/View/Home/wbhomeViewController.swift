@@ -72,13 +72,14 @@ extension wbhomeViewController{
     /// 设置导航栏标题
        private func setupNavTitle() {
            
-//        let title = WBnetworktools.shared
+        let title = WBnetworktools.shared.useraccount.screen_name
            
-        let button = UIButton.cz_textButton("hzy", fontSize: 20, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
+        let button = wbtitlebutton(title: title)
+            //UIButton.cz_textButton(title, fontSize: 20, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
         
           navitem.titleView = button
            
-        button?.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
        }
  @objc func clickTitleButton(btn: UIButton) {
         

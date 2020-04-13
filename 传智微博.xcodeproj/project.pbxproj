@@ -32,6 +32,7 @@
 		0612157B2441D72A004E110A /* wbcommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612157A2441D72A004E110A /* wbcommon.swift */; };
 		0612157E2441DB1A004E110A /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612157D2441DB1A004E110A /* WBOAuthViewController.swift */; };
 		0620AB2D2439F2C5007A8248 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 0620AB2C2439F2C5007A8248 /* main.json */; };
+		065E3B2C2444823700D7601E /* wbtitlebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E3B2B2444823700D7601E /* wbtitlebutton.swift */; };
 		068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */; };
 		068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */; };
 		06A6C1762436039900A383E3 /* WBvisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A6C1752436039900A383E3 /* WBvisitorView.swift */; };
@@ -101,6 +102,7 @@
 		0612157A2441D72A004E110A /* wbcommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wbcommon.swift; sourceTree = "<group>"; };
 		0612157D2441DB1A004E110A /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		0620AB2C2439F2C5007A8248 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		065E3B2B2444823700D7601E /* wbtitlebutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wbtitlebutton.swift; sourceTree = "<group>"; };
 		068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBdemoViewController.swift; sourceTree = "<group>"; };
 		068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		06A6C1752436039900A383E3 /* WBvisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBvisitorView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				0604248D242DFD04002B34F4 /* wbhomeViewController.swift */,
+				065E3B2B2444823700D7601E /* wbtitlebutton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */,
 				060424BD242E0E0F002B34F4 /* NSString+CZBase64.m in Sources */,
 				0604249E242DFD04002B34F4 /* wbnavigationController.swift in Sources */,
+				065E3B2C2444823700D7601E /* wbtitlebutton.swift in Sources */,
 				06C108F724431EDA0088FAD0 /* WBuseraccount.swift in Sources */,
 				060424C0242E0E0F002B34F4 /* NSObject+CZRuntime.m in Sources */,
 				060424C3242E0E0F002B34F4 /* NSAttributedString+CZAdditon.m in Sources */,

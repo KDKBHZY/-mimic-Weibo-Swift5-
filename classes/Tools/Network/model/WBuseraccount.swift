@@ -16,6 +16,9 @@ class WBuseraccount: NSObject {
     //开发者5年
     //过期日期
     var remind_in: Date?
+    var screen_name = "KDKB2435"
+    var avatar_large = "https://tvax4.sinaimg.cn/crop.0.0.749.749.180/005Az3oRly8fjshna54d6j30ku0kt0tg.jpg?KID=imgbed,tva&Expires=1586787304&ssig=Pr8qAZi5O6"
+
        var isRealName:Bool?
     var expires_in:String?
 //    TimeInterval = 0 {
