@@ -33,6 +33,9 @@
 		0612157E2441DB1A004E110A /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612157D2441DB1A004E110A /* WBOAuthViewController.swift */; };
 		0620AB2D2439F2C5007A8248 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 0620AB2C2439F2C5007A8248 /* main.json */; };
 		065E3B2C2444823700D7601E /* wbtitlebutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E3B2B2444823700D7601E /* wbtitlebutton.swift */; };
+		065E3B2F244484B400D7601E /* WBwelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E3B2E244484B400D7601E /* WBwelcome.swift */; };
+		065E3B312444853600D7601E /* WBnewfeatureview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E3B302444853600D7601E /* WBnewfeatureview.swift */; };
+		065E3B33244486D700D7601E /* wbwelcomeview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 065E3B32244486D700D7601E /* wbwelcomeview.xib */; };
 		068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */; };
 		068C50CA242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */; };
 		06A6C1762436039900A383E3 /* WBvisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A6C1752436039900A383E3 /* WBvisitorView.swift */; };
@@ -103,6 +106,9 @@
 		0612157D2441DB1A004E110A /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		0620AB2C2439F2C5007A8248 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		065E3B2B2444823700D7601E /* wbtitlebutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wbtitlebutton.swift; sourceTree = "<group>"; };
+		065E3B2E244484B400D7601E /* WBwelcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBwelcome.swift; sourceTree = "<group>"; };
+		065E3B302444853600D7601E /* WBnewfeatureview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBnewfeatureview.swift; sourceTree = "<group>"; };
+		065E3B32244486D700D7601E /* wbwelcomeview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = wbwelcomeview.xib; sourceTree = "<group>"; };
 		068C50C7242F5BCC00DAC554 /* WBdemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBdemoViewController.swift; sourceTree = "<group>"; };
 		068C50C9242F6CF100DAC554 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		06A6C1752436039900A383E3 /* WBvisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBvisitorView.swift; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 		06042494242DFD04002B34F4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				065E3B2D2444845400D7601E /* New feature */,
 				0612157C2441DB1A004E110A /* OAuth */,
 				06A6C1742436034B00A383E3 /* 访客 */,
 				06042496242DFD04002B34F4 /* wbbaseViewController.swift */,
@@ -295,6 +302,16 @@
 			);
 			name = OAuth;
 			path = "../../../../../´«ÖÇÎ¢²©/´«ÖÇÎ¢²©/´«ÖÇÎ¢²©/Classes/View(ÊÓÍ¼ºÍ¿ØÖÆÆ÷)/Main/OAuth";
+			sourceTree = "<group>";
+		};
+		065E3B2D2444845400D7601E /* New feature */ = {
+			isa = PBXGroup;
+			children = (
+				065E3B2E244484B400D7601E /* WBwelcome.swift */,
+				065E3B302444853600D7601E /* WBnewfeatureview.swift */,
+				065E3B32244486D700D7601E /* wbwelcomeview.xib */,
+			);
+			path = "New feature";
 			sourceTree = "<group>";
 		};
 		068C50C6242F5B7D00DAC554 /* 测试 */ = {
@@ -432,6 +449,7 @@
 			files = (
 				0620AB2D2439F2C5007A8248 /* main.json in Resources */,
 				06042480242DF934002B34F4 /* LaunchScreen.storyboard in Resources */,
+				065E3B33244486D700D7601E /* wbwelcomeview.xib in Resources */,
 				0604247D242DF934002B34F4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +514,7 @@
 				060424C3242E0E0F002B34F4 /* NSAttributedString+CZAdditon.m in Sources */,
 				060424C4242E0E0F002B34F4 /* NSArray+Log.m in Sources */,
 				06EA0F5C242E19060057CAE2 /* Bundle+Extensions.swift in Sources */,
+				065E3B312444853600D7601E /* WBnewfeatureview.swift in Sources */,
 				060424BB242E0E0F002B34F4 /* UIScreen+CZAddition.m in Sources */,
 				06042499242DFD04002B34F4 /* wbdiscoverViewController.swift in Sources */,
 				06A6C1762436039900A383E3 /* WBvisitorView.swift in Sources */,
@@ -505,6 +524,7 @@
 				06C96BF7243DD86C001419E8 /* WBNetworkManager+Extension.swift in Sources */,
 				068C50C8242F5BCC00DAC554 /* WBdemoViewController.swift in Sources */,
 				06042474242DF933002B34F4 /* AppDelegate.swift in Sources */,
+				065E3B2F244484B400D7601E /* WBwelcome.swift in Sources */,
 				06D94891244083DC00013917 /* wbstatuslist.swift in Sources */,
 				060424C2242E0E0F002B34F4 /* NSString+CZHash.m in Sources */,
 				060424C1242E0E0F002B34F4 /* UIViewController+CZAddition.m in Sources */,

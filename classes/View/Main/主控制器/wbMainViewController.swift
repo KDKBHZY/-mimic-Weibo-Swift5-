@@ -17,6 +17,8 @@ class wbMainViewController: UITabBarController {
               setupChildcontrollers()
         setupComposeButton()
         setuptimer()
+        //设置新特性
+        setupNewfeatureViews()
       //设置代理
         delegate = self
         //注册通知
@@ -172,4 +174,18 @@ extension wbMainViewController{
                 
                }
            }
+}
+extension wbMainViewController {
+
+/// 设置新特性视图
+private func setupNewfeatureViews() {
+    
+    // 0. 判断是否登录
+   
+    
+    // 1. 如果更新，显示新特性，否则显示欢迎
+    let v = WBwelcome.welcomeView()
+    // 2. 添加视图
+    view.addSubview(v)
+}
 }
